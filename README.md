@@ -6,8 +6,12 @@ Initialement, le CSV trie les transactions par leur date de prise en compte par 
 
 ## Screeshots
 Fichier CSV de la banque postale :
+
+
 ![screenshot du CSV de la banque postale](Images/CSV.png)
 
 Sortie du terminal :
+
+
 ![screenshot du terminal](Images/output.png)
 
