@@ -10,7 +10,7 @@ try:
 except:
     print("Manque le chemin du .csv")
 
-regex = re.compile(r"\d{2}\.\d{2}\.\d{2}")
+regex = re.compile(r"\d{2}(\.|\/)\d{2}(\.|\/)\d{2}")
 
 def get_time(chaine):
     '''Récupère la date de transaction dans la chaine de caractères'''
