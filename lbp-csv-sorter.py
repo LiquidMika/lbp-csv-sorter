@@ -38,7 +38,7 @@ with open(chemin, encoding='iso8859-15') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=';')
     line_count = 0
     for row in csv_reader:
-        if line_count < 8: # Sauter l'entete du fichier CSV
+        if line_count < 7: # Sauter l'entete du fichier CSV
             line_count += 1
             continue
         else:
