@@ -10,13 +10,20 @@ try:
 except:
     print("Manque le chemin du .csv")
 
-regex = re.compile(r"\d{2}(\.|\/)\d{2}(\.|\/)\d{2}")
+# Format dd/mm/yyyy or dd.mm.yyyy 
+regex1 = re.compile(r"\d{2}(\.|\/)\d{2}(\.|\/)\d{4}")
+
+# Format dd/mm/yy or dd.mm.yy 
+regex2 = re.compile(r"\d{2}(\.|\/)\d{2}(\.|\/)\d{2}")
 
 def get_time(chaine):
     '''Récupère la date de transaction dans la chaine de caractères'''
     d = None
-    if regex.search(chaine):
-        d = regex.search(chaine).group()
+    if regex1.search(chaine):
+        d = regex1.search(chaine).group()
+        d = d[-4:] + '-' + d[3:5] + '-' + d[:2]
+    elif regex2.search(chaine):
+        d = regex2.search(chaine).group()
         d = '20' + d[-2:] + '-' + d[3:5] + '-' + d[:2]
     return d
 
